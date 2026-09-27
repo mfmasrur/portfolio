@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Mahir Faisal Masrur — Academic Portfolio</title>
+<style>
+  :root{
+    --paper:#F7F5EF;
+    --ink:#1E2E33;
+    --ink-soft:#4B5B60;
+    --teal:#2C5A5E;
+    --teal-deep:#1B3B3E;
+    --gold:#B98A2E;
+    --line:#D8D3C4;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Iowan Old Style','Palatino Linotype',Georgia,'Noto Serif',serif;
+    line-height:1.65;
+  }
+  .sans{font-family:'Helvetica Neue',Arial,'Segoe UI',sans-serif;}
+  a{color:var(--teal-deep);}
+  h1,h2,h3{font-weight:600;color:var(--teal-deep);margin:0;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px;}
+
+  /* Nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,245,239,0.94);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(4px);
+  }
+  nav .wrap{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  nav .brand{font-family:'Iowan Old Style',Georgia,serif;font-size:19px;font-weight:600;color:var(--teal-deep);letter-spacing:0.2px;}
+  nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:18px;margin:0;padding:0;font-family:Arial,sans-serif;font-size:14px;}
+  nav a{text-decoration:none;color:var(--ink-soft);}
+  nav a:hover{color:var(--teal-deep);}
+
+  /* Hero */
+  header.hero{
+    padding:64px 0 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+  .hero-photo{
+    width:150px;height:150px;border-radius:50%;
+    object-fit:cover;border:3px solid var(--teal);
+    flex-shrink:0;background:#e6e2d6;
+  }
+  .hero-text{flex:1;min-width:260px;}
+  .eyebrow{font-family:Arial,sans-serif;font-size:13px;color:var(--gold);letter-spacing:0.3px;margin-bottom:6px;}
+  .hero-text h1{font-size:38px;line-height:1.15;}
+  .hero-text p.role{font-family:Arial,sans-serif;font-size:15px;color:var(--ink-soft);margin-top:10px;}
+  .hero-text p.loc{font-family:Arial,sans-serif;font-size:14px;color:var(--ink-soft);margin-top:4px;}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  section h2{font-size:24px;margin-bottom:22px;position:relative;padding-left:16px;}
+  section h2::before{
+    content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;background:var(--gold);
+  }
+  section p{max-width:700px;}
+
+  /* About */
+  .about-text{max-width:700px;color:var(--ink);}
+
+  /* Education / cards */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:22px 24px;margin-bottom:16px;
+  }
+  .card h3{font-size:18px;}
+  .card .meta{font-family:Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);margin-top:6px;}
+  .card .meta span{display:inline-block;margin-right:14px;}
+
+  /* Research */
+  .research-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .research-list li{
+    font-family:Arial,sans-serif;font-size:15.5px;
+    padding:14px 18px;background:var(--card);border:1px solid var(--line);
+    border-left:3px solid var(--teal);border-radius:4px;
+  }
+
+  /* Skills */
+  .skill-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .skill-pill{
+    font-family:Arial,sans-serif;font-size:14px;color:var(--teal-deep);
+    border:1px solid var(--teal);padding:7px 16px;border-radius:20px;background:var(--card);
+  }
+
+  /* Leadership / training */
+  .entry{margin-bottom:18px;}
+  .entry h3{font-size:17px;}
+  .entry .meta{font-family:Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);margin-top:5px;}
+
+  /* Contact */
+  .contact-grid{display:flex;flex-wrap:wrap;gap:28px;font-family:Arial,sans-serif;font-size:15px;}
+  .contact-item{min-width:200px;}
+  .contact-item .label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--gold);margin-bottom:4px;}
+  .contact-item a{text-decoration:none;color:var(--teal-deep);}
+
+  footer{
+    text-align:center;padding:28px 0;font-family:Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);
+  }
+
+  @media(max-width:600px){
+    .hero-inner{flex-direction:column;align-items:flex-start;}
+    .hero-text h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">M. F. Masrur</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-inner">
+      <img class="hero-photo" src="Masrur.jpeg" alt="Md Mahir Faisal Masrur">
+      <div class="hero-text">
+        <div class="eyebrow sans">Chemistry Graduate</div>
+        <h1>Md Mahir Faisal Masrur</h1>
+        <p class="role">Department of Chemistry, National University — Undergraduate Complete</p>
+        <p class="loc">Pathanpara, Boalia, Rajshahi</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="about-text">
+      I am a Chemistry graduate from Rajshahi College under the National University of Bangladesh, with a B.Sc. in Chemistry and a CGPA of 3.46. I have a strong interest in applied chemistry and its practical applications in industry. I am particularly interested in analytical chemistry, quality control, research and development, and pharmaceutical and chemical industries. I am keen to develop practical skills in instrumental analysis, chromatography, spectroscopy, and modern laboratory techniques.
+    </p>
+    <p class="about-text">
+      I consider myself a responsible, hardworking, and quick-learning person who is willing to learn new techniques and adapt to professional environments. My goal is to build a successful career in the chemical industry while continuously improving my technical and professional skills. I am also interested in pursuing a suitable master's degree abroad that will strengthen my academic knowledge and prepare me for a long-term industry-oriented career.
+    </p>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>B.Sc. in Chemistry</h3>
+      <p style="margin:8px 0 0;">Department of Chemistry, National University</p>
+      <div class="meta">
+        <span>Session: 2019–20</span>
+        <span>CGPA: 3.46</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research Interests</h2>
+    <ul class="research-list">
+      <li>Water</li>
+      <li>Wastewater</li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skill-row">
+      <span class="skill-pill">HTML</span>
+      <span class="skill-pill">C Programming</span>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <h2>Training &amp; Certifications</h2>
+    <div class="entry">
+      <h3>5 Days Hands on Research Training</h3>
+      <div class="meta">
+        <span>Rajshahi University Higher Education and Research Forum</span> &middot;
+        <span>September 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <h2>Leadership &amp; Activities</h2>
+    <div class="entry">
+      <h3>Member — Rajshahi University Higher Education and Research Forum</h3>
+      <div class="meta">June 2026 – Present</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="label">Phone</span>
+        <a href="tel:+8801966617659">+880 1966-617659</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Email</span>
+        <a href="mailto:mahirfaisal0000@gmail.com">mahirfaisal0000@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Location</span>
+        <span>Pathanpara, Boalia, Rajshahi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Md Mahir Faisal Masrur. All rights reserved.
+</footer>
+
+</body>
+</html>
